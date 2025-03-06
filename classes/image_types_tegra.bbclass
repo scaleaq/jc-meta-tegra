@@ -85,7 +85,7 @@ def tegraflash_initrd_flasher(d):
     if not initramfs_image:
         return ''
     if bb.utils.to_boolean(d.getVar('INITRAMFS_IMAGE_BUNDLE')):
-        return '${DEPLOY_DIR_IMAGE}/initrd-flash-kernel/Image-initrd-flash.cboot'
+        return '${DEPLOY_DIR_IMAGE}/initrd-flash-kernel/${KERNEL_IMAGETYPE}-initrd-flash.cboot'
     else:
         return '${DEPLOY_DIR_IMAGE}/%s-${MACHINE}.cboot' % initramfs_image
 
